@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import footerStyles from "./footer.module.scss"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -13,7 +14,7 @@ const Footer = () => {
   `)
   const { author } = data.site.siteMetadata
   return (
-    <footer>
+    <footer className={footerStyles.footer}>
       <p>
         Created by
         <a href={`https://www.twitter.com/${author}`} target="_blank">
